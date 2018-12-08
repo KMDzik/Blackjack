@@ -19,3 +19,23 @@ let gameStarted = false,
     dealerScore = 0,
     playerScore = 0,
     deck = [];
+
+hitButton.style.display = 'none';
+stayButton.style.display = 'none';
+showStatus();
+
+
+newGameButton.addEventListener('click', function() {
+  gameStarted = true;
+  gameOver = false;
+  playerWon = false;
+
+  deck = createDeck();
+  dealerCards = [ getNextCard(), getNextCard()];
+  playerCards = [ getNextCard(), getNextCard()];
+
+  newGameButton.style.display = 'none';
+  hitButton.style.display = 'inline';
+  stayButton.style.display = 'inline';
+  showStatus();
+});
