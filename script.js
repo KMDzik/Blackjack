@@ -39,3 +39,28 @@ newGameButton.addEventListener('click', function() {
   stayButton.style.display = 'inline';
   showStatus();
 });
+
+function createDeck() {
+    let deck = [];
+    for(let suitIdx = 0; suitIdx < suits.length; suitIdx++) {
+        for (let valueIdx = 0; valueIdx < values.length; valueIdx++) {
+          let card = {
+            suit: suits[suitIdx],
+            value: values[valueIdx]
+          };
+          deck.push(card);
+        }
+    }
+    return deck;
+}
+
+function getCardString(card) {
+  retrn card.value + 'of' + card.suit;
+}
+
+function showStatus() {
+  if(!gameStarted) {
+    textArea.innerText = "Welcome to Blackjack!";
+    return;
+  }
+}
